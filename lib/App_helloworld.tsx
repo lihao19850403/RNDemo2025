@@ -1,11 +1,4 @@
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View } from 'react-native';
 
 const containerStyles = StyleSheet.create({
   container: {
@@ -22,13 +15,9 @@ const textStyles = StyleSheet.create({
 });
 
 export default function HelloWorldApp() {
-  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={containerStyles.container}>
-        <Text style={textStyles.text}>Hello, world!</Text>
-      </View>
-    </SafeAreaProvider>
+    <View style={containerStyles.container}>
+      <Text style={textStyles.text}>Hello, world!</Text>
+    </View>
   );
 }

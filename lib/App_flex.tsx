@@ -1,16 +1,13 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
   containerDefault: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   containerHorizontal: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,12 +34,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     backgroundColor: 'grey',
   },
+  wrap: {
+    flexWrap: 'wrap',
+  },
 });
 
 export default class FlexDemo extends Component {
   render() {
     return (
-      <SafeAreaProvider>
+      <View>
         <View style={styles.containerDefault}>
           <Text style={styles.viewOne}>视图1</Text>
           <Text style={styles.viewTwo}>视图2</Text>
@@ -51,14 +51,14 @@ export default class FlexDemo extends Component {
           <Text style={styles.viewOne}>视图3</Text>
           <Text style={styles.viewTwo}>视图4</Text>
         </View>
-        <View style={[styles.containerHorizontal, { flexWrap: 'wrap' }]}>
+        <View style={[styles.containerHorizontal, styles.wrap]}>
           <Text style={styles.viewSmall}>视图1</Text>
           <Text style={styles.viewSmall}>视图2</Text>
           <Text style={styles.viewSmall}>视图3</Text>
           <Text style={styles.viewSmall}>视图4</Text>
           <Text style={styles.viewSmall}>视图5</Text>
         </View>
-      </SafeAreaProvider>
+      </View>
     );
   }
 }
