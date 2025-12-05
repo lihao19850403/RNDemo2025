@@ -8,6 +8,7 @@ import FlexDemo from './lib/App_flex.tsx';
 import AppPropState from './lib/APP_propstate.tsx';
 import AppTimeWatch from './lib/App_timewatch.tsx';
 import AppEvent from './lib/App_event.tsx';
+import AppHookApi from './lib/APP_hookapi.tsx';
 
 export default function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,7 +25,7 @@ export default function App() {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       />
       <View style={styles.container}>
-        <AppEvent />
+        <AppHookApi />
       </View>
     </SafeAreaProvider>
   );
