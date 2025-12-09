@@ -69,6 +69,9 @@ export default class AppMain extends Component {
               options={{
                 title: 'RNDemo2025',
                 headerTitleAlign: 'center',
+                headerStyle: {
+                  backgroundColor: '#6FDEFF',
+                },
               }}
             >
               {() => HomeMainPageWrapper(APP_PAGES)}
@@ -80,6 +83,9 @@ export default class AppMain extends Component {
                 options={{
                   title: pageInfo.pageTitle,
                   headerTitleAlign: 'center',
+                  headerStyle: {
+                    backgroundColor: '#6FDEFF',
+                  },
                 }}
               />
             ))}

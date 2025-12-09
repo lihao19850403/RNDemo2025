@@ -1,11 +1,12 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { StorageModel } from '../models/StorageModel.tsx';
 import {
   Alert,
-  Button,
   DeviceEventEmitter,
   StyleSheet,
+  Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -41,6 +42,18 @@ export class StorageItemCell extends Component {
     },
     buttonSpace: {
       marginRight: 8,
+    },
+    button: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#4492EF',
+      padding: 8,
+      borderRadius: 2,
+    },
+    buttonText: {
+      color: 'white',
+      includeFontPadding: false,
+      textAlignVertical: 'center',
     },
   });
 
@@ -105,9 +118,13 @@ export class StorageItemCell extends Component {
             });
           }}
         />
-        <Button title="修改" onPress={this.modify} />
+        <TouchableOpacity onPress={this.modify} style={this.styles.button}>
+          <Text style={this.styles.buttonText}>修改</Text>
+        </TouchableOpacity>
         <View style={this.styles.buttonSpace} />
-        <Button title="删除" onPress={this.remove} />
+        <TouchableOpacity onPress={this.remove} style={this.styles.button}>
+          <Text style={this.styles.buttonText}>删除</Text>
+        </TouchableOpacity>
       </View>
     );
   }

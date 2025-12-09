@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     backgroundColor: 'red',
+    includeFontPadding: false,
+    textAlignVertical: 'center',
   },
   viewTwo: {
     width: 200,
@@ -26,6 +28,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     backgroundColor: 'yellow',
+    includeFontPadding: false,
+    textAlignVertical: 'center',
   },
   viewSmall: {
     width: 100,
@@ -33,6 +37,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     backgroundColor: 'grey',
+    includeFontPadding: false,
+    textAlignVertical: 'center',
   },
   wrap: {
     flexWrap: 'wrap',

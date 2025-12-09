@@ -1,10 +1,11 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import {
   Alert,
-  Button,
   DeviceEventEmitter,
   StyleSheet,
+  Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 // 需要执行npm install @react-native-async-storage/async-storage
@@ -24,6 +25,18 @@ export class AddStorage extends Component {
       borderColor: 'grey',
       borderWidth: 1,
       marginRight: 8,
+    },
+    button: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#4492EF',
+      padding: 8,
+      borderRadius: 2,
+    },
+    buttonText: {
+      color: 'white',
+      includeFontPadding: false,
+      textAlignVertical: 'center',
     },
   });
 
@@ -64,7 +77,9 @@ export class AddStorage extends Component {
             this.value = value;
           }}
         />
-        <Button title="添加" onPress={this.addStorage} />
+        <TouchableOpacity onPress={this.addStorage} style={this.styles.button}>
+          <Text style={this.styles.buttonText}>添加</Text>
+        </TouchableOpacity>
       </View>
     );
   }
