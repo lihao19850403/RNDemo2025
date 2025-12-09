@@ -14,6 +14,7 @@ import {
   View,
 } from 'react-native';
 import getColorScheme = Appearance.getColorScheme;
+import HomeMainPageWrapper from './main/views/HomeMainPageWrapper.tsx';
 
 const Stack = createStackNavigator();
 
@@ -62,7 +63,16 @@ export default class AppMain extends Component {
           barStyle={this.isDarkMode ? 'light-content' : 'dark-content'}
         />
         <NavigationContainer>
-          <Stack.Navigator initialRouteName={APP_PAGES[0].pageName}>
+          <Stack.Navigator initialRouteName="Main">
+            <Stack.Screen
+              name="Main"
+              options={{
+                title: 'RNDemo2025',
+                headerTitleAlign: 'center',
+              }}
+            >
+              {() => HomeMainPageWrapper(APP_PAGES)}
+            </Stack.Screen>
             {APP_PAGES.map((pageInfo: AppPageModel) => (
               <Stack.Screen
                 name={pageInfo.pageName}

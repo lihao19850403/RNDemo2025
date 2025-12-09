@@ -1,4 +1,3 @@
-import HomeMainPageWrapper from './main/views/HomeMainPageWrapper.tsx';
 import { AppPageModel } from './main/models/AppPageModel.tsx';
 /* ---------- 内容页面。 ---------- */
 import AppOrigin from './origin/App_origin.tsx';
@@ -12,13 +11,8 @@ import AppHookApi from './hook/APP_hookapi.tsx';
 import AppFlatList from './flatlist/App_flatlist.tsx';
 import AppStorage from './storage/App_storage.tsx';
 
+/** 所有页面内容。 */
 const APP_PAGES: AppPageModel[] = [
-  // 首页。
-  {
-    pageName: 'Main',
-    pageTitle: 'RNDemo2025',
-    pageContent: HomeMainPageWrapper,
-  },
   // 欢迎页。
   {
     pageName: 'AppOrigin',

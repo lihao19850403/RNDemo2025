@@ -2,7 +2,6 @@ import { Component } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { AppPageModel } from '../models/AppPageModel.tsx';
 import { AppPageItemCell } from './AppPageItemCell.tsx';
-import APP_PAGES from '../../Contents.tsx';
 
 export default class HomeMainPage extends Component {
   constructor(props: any) {
@@ -10,8 +9,9 @@ export default class HomeMainPage extends Component {
     this.props = props;
   }
 
-  props: { navigation: any } = {
+  props: { navigation: any, contents: AppPageModel[] } = {
     navigation: {},
+    contents: []
   };
 
   state: { pagesList: AppPageModel[] } = {
@@ -31,11 +31,8 @@ export default class HomeMainPage extends Component {
   }
 
   componentDidMount() {
-    let pagesList = APP_PAGES.filter((page: AppPageModel) => {
-      return page.pageName !== 'Main';
-    });
     this.setState({
-      pagesList: pagesList,
+      pagesList: this.props.contents,
     });
   }
 
