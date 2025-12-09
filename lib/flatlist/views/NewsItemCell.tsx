@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { NewsItem } from '../models/NewsItem.tsx';
+import { NewsItemModel } from '../models/NewsItemModel.tsx';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 export class NewsItemCell extends Component {
@@ -8,7 +8,7 @@ export class NewsItemCell extends Component {
     this.props = props;
   }
 
-  props: { newsItem: NewsItem } = {
+  props: { newsItem: NewsItemModel } = {
     newsItem: {},
   };
 

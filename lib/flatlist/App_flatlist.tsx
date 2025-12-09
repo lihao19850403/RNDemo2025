@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { NewsItem } from './models/NewsItem.tsx';
+import { NewsItemModel } from './models/NewsItemModel.tsx';
 import { NewsItemCell } from './views/NewsItemCell.tsx';
 import { NewsListViewModel } from './viewmodels/NewsListViewModel.tsx';
 
 export default class AppFlatList extends Component {
-  state: { newsList: NewsItem[] } = {
+  state: { newsList: NewsItemModel[] } = {
     newsList: [],
   };
 
@@ -26,7 +26,7 @@ export default class AppFlatList extends Component {
   }
 
   componentDidMount() {
-    this.viewModel.getNewsList().then((newsList: NewsItem[]) => {
+    this.viewModel.getNewsList().then((newsList: NewsItemModel[]) => {
       this.setState({
         newsList: newsList,
       });

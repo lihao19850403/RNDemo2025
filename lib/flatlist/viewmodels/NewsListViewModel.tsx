@@ -1,8 +1,8 @@
-import { NewsItem } from '../models/NewsItem.tsx';
+import { NewsItemModel } from '../models/NewsItemModel.tsx';
 import axios from 'axios';
 
 export class NewsListViewModel {
-  getNewsList(): Promise<NewsItem[]> {
+  getNewsList(): Promise<NewsItemModel[]> {
     return new Promise((resolve, reject) => {
       axios
         .get(
