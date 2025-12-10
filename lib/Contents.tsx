@@ -10,6 +10,7 @@ import AppEvent from './event/App_event.tsx';
 import AppHookApi from './hook/APP_hookapi.tsx';
 import AppFlatList from './flatlist/App_flatlist.tsx';
 import AppStorage from './storage/App_storage.tsx';
+import AppNativeCall from './nativecall/App_nativecall.tsx';
 
 /** 所有页面内容。 */
 const APP_PAGES: AppPageModel[] = [
@@ -72,6 +73,12 @@ const APP_PAGES: AppPageModel[] = [
     pageName: 'AppStorage',
     pageTitle: '内置存储',
     pageContent: AppStorage,
+  },
+  // 与原生交互。
+  {
+    pageName: 'AppNativeCall',
+    pageTitle: '与原生交互',
+    pageContent: AppNativeCall,
   },
 ];
 export default APP_PAGES;
